@@ -1,5 +1,7 @@
 import type { User, Listing, DealRoom, DealRoomMessage } from './types';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export const mockUsers: User[] = [
   {
     id: 'user_seller_1',
@@ -33,7 +35,7 @@ export const mockListings: Listing[] = [
     id: 'listing_1',
     sellerId: 'user_seller_1',
     companyName: 'SpaceX',
-    companyLogo: '/logos/spacex.svg',
+    companyLogo: `${basePath}/logos/spacex.svg`,
     shareClass: 'Common',
     quantityMin: 100,
     quantityMax: 500,
@@ -59,7 +61,7 @@ export const mockListings: Listing[] = [
     id: 'listing_2',
     sellerId: 'user_seller_1',
     companyName: 'Stripe',
-    companyLogo: '/logos/stripe.svg',
+    companyLogo: `${basePath}/logos/stripe.svg`,
     shareClass: 'Preferred',
     quantityMin: 50,
     quantityMax: 200,
@@ -84,7 +86,7 @@ export const mockListings: Listing[] = [
     id: 'listing_3',
     sellerId: 'user_seller_1',
     companyName: 'Databricks',
-    companyLogo: '/logos/databricks.svg',
+    companyLogo: `${basePath}/logos/databricks.svg`,
     shareClass: 'Common',
     quantityMin: 200,
     quantityMax: 1000,
@@ -106,7 +108,7 @@ export const mockListings: Listing[] = [
     id: 'listing_4',
     sellerId: 'user_seller_1',
     companyName: 'Canva',
-    companyLogo: '/logos/canva.svg',
+    companyLogo: `${basePath}/logos/canva.svg`,
     shareClass: 'Common',
     quantityMin: 500,
     quantityMax: 2000,
@@ -131,7 +133,7 @@ export const mockListings: Listing[] = [
     id: 'listing_5',
     sellerId: 'user_seller_1',
     companyName: 'Anduril',
-    companyLogo: '/logos/anduril.svg',
+    companyLogo: `${basePath}/logos/anduril.svg`,
     shareClass: 'Preferred',
     quantityMin: 75,
     quantityMax: 300,
@@ -157,7 +159,7 @@ export const mockListings: Listing[] = [
     id: 'listing_6',
     sellerId: 'user_seller_1',
     companyName: 'Discord',
-    companyLogo: '/logos/discord.svg',
+    companyLogo: `${basePath}/logos/discord.svg`,
     shareClass: 'Options',
     quantityMin: 1000,
     quantityMax: 5000,

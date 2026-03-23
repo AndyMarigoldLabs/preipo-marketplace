@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { NO_GENERAL_SOLICITATION_NOTICE } from '@/lib/constants';
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function HomePage() {
   return (
@@ -84,11 +85,11 @@ export default function HomePage() {
 
                 {/* Listing cards */}
                 <div className="p-5 space-y-3">
-                  <PreviewCard logo="/logos/spacex.svg" name="SpaceX" detail="Common · 100–500 shares" price="$95 – $110" valuation="Implied $250B" verified />
-                  <PreviewCard logo="/logos/stripe.svg" name="Stripe" detail="Preferred · 50–200 shares" price="$28 – $35" valuation="Implied $65B" verified />
+                  <PreviewCard logo={`${basePath}/logos/spacex.svg`} name="SpaceX" detail="Common · 100–500 shares" price="$95 – $110" valuation="Implied $250B" verified />
+                  <PreviewCard logo={`${basePath}/logos/stripe.svg`} name="Stripe" detail="Preferred · 50–200 shares" price="$28 – $35" valuation="Implied $65B" verified />
                   <div className="rounded-lg border border-white/[.06] bg-white/[.02] p-4 opacity-40">
                     <div className="flex items-center gap-3">
-                      <Image src="/logos/anduril.svg" alt="Anduril" width={36} height={36} className="h-9 w-9 rounded-lg" />
+                      <img src={`${basePath}/logos/anduril.svg`} alt="Anduril" className="h-9 w-9 rounded-lg" />
                       <div>
                         <div className="text-sm font-semibold text-white">Anduril</div>
                         <div className="text-[11px] text-slate-500">Preferred · 75–300 shares</div>
@@ -213,7 +214,7 @@ function PreviewCard({ logo, name, detail, price, valuation, verified }: { logo:
     <div className="rounded-lg border border-white/[.06] bg-white/[.02] p-4">
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center gap-3">
-          <Image src={logo} alt={name} width={36} height={36} className="h-9 w-9 rounded-lg" />
+          <img src={logo} alt={name} className="h-9 w-9 rounded-lg" />
           <div>
             <div className="text-sm font-semibold text-white">{name}</div>
             <div className="text-[11px] text-slate-500">{detail}</div>

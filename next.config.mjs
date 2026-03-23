@@ -1,9 +1,15 @@
+const basePath = process.env.GITHUB_ACTIONS ? '/preipo-marketplace' : '';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: process.env.GITHUB_ACTIONS ? '/preipo-marketplace' : '',
+  basePath,
+  assetPrefix: basePath,
   images: {
     unoptimized: true,
+  },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
 };
 

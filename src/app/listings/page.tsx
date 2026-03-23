@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+// Using <img> instead of next/image for basePath compatibility with static export
 import { useListings } from '@/hooks/useListings';
 import { formatCurrency, formatValuationShort, formatPosMethod, daysAgo, daysUntil } from '@/lib/utils';
 import { NO_GENERAL_SOLICITATION_NOTICE, SHARE_CLASSES } from '@/lib/constants';
@@ -152,7 +152,7 @@ export default function ListingsPage() {
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
                       {listing.companyLogo ? (
-                        <Image src={listing.companyLogo} alt={listing.companyName} width={40} height={40} className="h-10 w-10 rounded-lg shrink-0" />
+                        <img src={listing.companyLogo} alt={listing.companyName} className="h-10 w-10 rounded-lg shrink-0" />
                       ) : (
                         <div className="h-10 w-10 rounded-lg bg-slate-800 flex items-center justify-center text-base font-bold text-white border border-white/5 shrink-0">{listing.companyName[0]}</div>
                       )}
@@ -199,7 +199,7 @@ export default function ListingsPage() {
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
                         {listing.companyLogo ? (
-                          <Image src={listing.companyLogo} alt={listing.companyName} width={40} height={40} className="h-10 w-10 rounded-lg shrink-0 opacity-40" />
+                          <img src={listing.companyLogo} alt={listing.companyName} className="h-10 w-10 rounded-lg shrink-0 opacity-40" />
                         ) : (
                           <div className="h-10 w-10 rounded-lg bg-slate-900 flex items-center justify-center text-base font-bold text-slate-600 border border-white/[.03] shrink-0">{listing.companyName[0]}</div>
                         )}
