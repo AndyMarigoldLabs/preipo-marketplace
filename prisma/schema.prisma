@@ -1,0 +1,204 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum KycStatus {
+  PENDING
+  VERIFIED
+  SUSPENDED
+  FAILED
+}
+
+enum ShareClass {
+  Common
+  Preferred
+  Options
+  Warrants
+}
+
+enum PosMethod {
+  DOCUMENT_HASH
+  TRANSFER_AGENT
+  ESCROW
+}
+
+enum PofMethod {
+  STABLECOIN_WALLET
+  BANK_VERIFICATION
+  LETTER_OF_CREDIT
+}
+
+enum PofTier {
+  TIER_1
+  TIER_2
+  TIER_3
+  TIER_4
+}
+
+enum UserRole {
+  UNVERIFIED
+  KYC_PENDING
+  BUYER
+  SELLER
+  BOTH
+  ADMIN
+}
+
+enum ListingStatus {
+  DRAFT
+  ACTIVE
+  EXPIRED
+  CANCELLED
+  FLAGGED
+}
+
+enum DealRoomStatus {
+  ACTIVE
+  EXPIRED
+  CLOSED
+}
+
+model User {
+  id                          String    @id @default(uuid())
+  walletAddress               String    @unique
+  email                       String?   @unique
+  kycStatus                   KycStatus @default(PENDING)
+  role                        UserRole  @default(UNVERIFIED)
+  pofTier                     PofTier?
+  pofMethod                   PofMethod?
+  pofVerifiedAt               DateTime?
+  accreditedInvestorAttestation Boolean  @default(false)
+  didTokenId                  String?
+  createdAt                   DateTime  @default(now())
+  updatedAt                   DateTime  @updatedAt
+
+  kycCredentials              KycCredential[]
+  listings                    Listing[]
+  proofsOfFunds               ProofOfFunds[]
+  dealRoomsAsBuyer            DealRoom[]        @relation("BuyerDealRooms")
+  dealRoomsAsSeller           DealRoom[]        @relation("SellerDealRooms")
+  dealRoomMessages            DealRoomMessage[]
+}
+
+model KycCredential {
+  id                 String    @id @default(uuid())
+  userId             String
+  personaInquiryId   String?
+  documentHash       String
+  verificationMethod String
+  status             KycStatus @default(PENDING)
+  credentialHash     String
+  issuedAt           DateTime  @default(now())
+  expiresAt          DateTime
+
+  user               User      @relation(fields: [userId], references: [id])
+}
+
+model Listing {
+  id                    String        @id @default(uuid())
+  sellerId              String
+  companyName           String
+  companyLogo           String?
+  shareClass            ShareClass
+  quantityMin           Int
+  quantityMax           Int
+  askPriceMin           Float
+  askPriceMax           Float
+  impliedValuation      Float?
+  posMethod             PosMethod?
+  posVerified           Boolean       @default(false)
+  posAttestationHash    String?
+  posVerifiedAt         DateTime?
+  certificateHash       String?
+  transferAgentVerified Boolean       @default(false)
+  escrowVerified        Boolean       @default(false)
+  rofrWaiver            Boolean       @default(false)
+  lockupExpired         Boolean       @default(false)
+  rule144Compliant      Boolean       @default(false)
+  listingTokenAddress   String?
+  listingTokenId        String?
+  status                ListingStatus @default(DRAFT)
+  expiresAt             DateTime
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+
+  seller                User          @relation(fields: [sellerId], references: [id])
+  attestations          SharesAttestation[]
+  dealRooms             DealRoom[]
+}
+
+model SharesAttestation {
+  id                String    @id @default(uuid())
+  listingId         String
+  method            PosMethod
+  certificateHash   String?
+  transferAgentName String?
+  escrowAgentName   String?
+  verifiedAt        DateTime?
+  verifierAddress   String?
+  metadata          Json      @default("{}")
+
+  listing           Listing   @relation(fields: [listingId], references: [id])
+}
+
+model ProofOfFunds {
+  id              String    @id @default(uuid())
+  userId          String
+  method          PofMethod
+  tier            PofTier
+  attestationHash String
+  verifiedAt      DateTime  @default(now())
+  expiresAt       DateTime
+
+  user            User      @relation(fields: [userId], references: [id])
+}
+
+model DealRoom {
+  id             String         @id @default(uuid())
+  listingId      String
+  buyerId        String
+  sellerId       String
+  status         DealRoomStatus @default(ACTIVE)
+  dealMemoHash   String?
+  lastActivityAt DateTime       @default(now())
+  expiresAt      DateTime
+  createdAt      DateTime       @default(now())
+
+  listing        Listing        @relation(fields: [listingId], references: [id])
+  buyer          User           @relation("BuyerDealRooms", fields: [buyerId], references: [id])
+  seller         User           @relation("SellerDealRooms", fields: [sellerId], references: [id])
+  messages       DealRoomMessage[]
+  dealMemos      DealMemo[]
+}
+
+model DealRoomMessage {
+  id           String   @id @default(uuid())
+  dealRoomId   String
+  senderId     String
+  content      String
+  documentHash String?
+  documentName String?
+  createdAt    DateTime @default(now())
+
+  dealRoom     DealRoom @relation(fields: [dealRoomId], references: [id])
+  sender       User     @relation(fields: [senderId], references: [id])
+}
+
+model DealMemo {
+  id              String    @id @default(uuid())
+  dealRoomId      String
+  termsHash       String
+  buyerSignature  String?
+  sellerSignature String?
+  usdcPrice       Float?
+  quantity        Int?
+  signedAt        DateTime?
+  onChainTxHash   String?
+
+  dealRoom        DealRoom  @relation(fields: [dealRoomId], references: [id])
+}

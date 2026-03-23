@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PreIPO — Home Mockup v2</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwindcss.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .glass { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col">
+
+  <!-- ===== HEADER ===== -->
+  <header class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-slate-950/70 glass">
+    <div class="mx-auto flex h-14 max-w-7xl items-center justify-between px-6">
+      <div class="flex items-center gap-10">
+        <a href="#" class="flex items-center gap-2.5">
+          <div class="flex h-8 w-8 items-center justify-center rounded-md bg-indigo-600">
+            <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          </div>
+          <span class="text-sm font-bold tracking-tight">PreIPO</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-1 text-[13px]">
+          <a href="listings.html" class="px-3 py-1.5 rounded-md font-medium text-white/50 hover:text-white hover:bg-white/5 transition-colors">Listings</a>
+          <a href="#" class="px-3 py-1.5 rounded-md font-medium text-white/50 hover:text-white hover:bg-white/5 transition-colors">Create</a>
+        </nav>
+      </div>
+      <div class="flex items-center gap-2.5">
+        <button class="h-8 w-8 rounded-md text-white/30 hover:text-white/60 hover:bg-white/5 flex items-center justify-center transition-colors">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/></svg>
+        </button>
+        <button class="hidden sm:inline-flex items-center gap-2 rounded-md border border-white/8 px-3 py-1.5 text-[13px] font-medium text-white/50 hover:text-white/80 hover:bg-white/5 transition-colors">
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3"/></svg>
+          Connect
+        </button>
+        <a href="#" class="inline-flex items-center rounded-md bg-indigo-600 px-3.5 py-1.5 text-[13px] font-semibold text-white hover:bg-indigo-500 transition-colors">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== COMPLIANCE STRIP ===== -->
+  <div class="mt-14 border-b border-amber-500/10 bg-amber-950/30 py-1.5">
+    <p class="text-center text-[11px] text-amber-500/60 tracking-wide">Not a general solicitation. Access restricted to pre-qualified accredited investors.</p>
+  </div>
+
+  <main class="flex-1">
+
+    <!-- ===== HERO — asymmetric split ===== -->
+    <section class="border-b border-white/5">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-16 items-start pt-16 pb-20 lg:pt-24 lg:pb-28">
+
+          <!-- Left: copy -->
+          <div class="max-w-xl">
+            <p class="text-[13px] font-mono font-medium text-indigo-400/80 mb-6 tracking-wide">FOR ACCREDITED INVESTORS</p>
+
+            <h1 class="text-[2.75rem] sm:text-5xl font-extrabold tracking-tight leading-[1.08] text-white">
+              Find pre-IPO<br/>secondary positions.
+            </h1>
+
+            <p class="mt-5 text-[15px] text-slate-400 leading-relaxed max-w-md">
+              Sellers prove share ownership on-chain. Buyers prove capital.
+              You find each other here. You transact on your own terms.
+            </p>
+
+            <p class="mt-3 text-[13px] text-slate-600 leading-relaxed max-w-md">
+              Not a broker-dealer. Not an ATS. Not an exchange.
+              A verified bulletin board — nothing more.
+            </p>
+
+            <div class="mt-8 flex items-center gap-3">
+              <a href="#" class="group inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500 transition-colors">
+                Get Verified
+                <svg class="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+              </a>
+              <a href="listings.html" class="inline-flex items-center rounded-lg border border-white/8 px-5 py-2.5 text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-colors">
+                Browse Listings
+              </a>
+            </div>
+
+            <!-- Trust line -->
+            <div class="mt-10 flex items-center gap-5 text-[11px] text-slate-600">
+              <div class="flex items-center gap-1.5">
+                <svg class="h-3 w-3 text-indigo-500/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                Ink Chain (Kraken L2)
+              </div>
+              <div class="flex items-center gap-1.5">
+                <svg class="h-3 w-3 text-indigo-500/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                KYC via Persona
+              </div>
+              <div class="flex items-center gap-1.5">
+                <svg class="h-3 w-3 text-indigo-500/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375"/></svg>
+                USDC settlement
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: a real listing card preview — shows the product instead of describing it -->
+          <div class="mt-12 lg:mt-4">
+            <!-- Fake browser chrome to frame it as "this is the product" -->
+            <div class="rounded-xl border border-white/[.06] bg-white/[.015] overflow-hidden shadow-2xl shadow-black/40">
+              <!-- Tab bar -->
+              <div class="flex items-center gap-2 border-b border-white/5 px-4 py-2.5">
+                <div class="flex gap-1.5">
+                  <div class="h-2.5 w-2.5 rounded-full bg-white/10"></div>
+                  <div class="h-2.5 w-2.5 rounded-full bg-white/10"></div>
+                  <div class="h-2.5 w-2.5 rounded-full bg-white/10"></div>
+                </div>
+                <div class="flex-1 flex justify-center">
+                  <div class="rounded-md bg-white/5 px-12 py-1 text-[10px] text-slate-600 font-mono">preipo.market/listings</div>
+                </div>
+              </div>
+
+              <!-- Content: 2 listing cards stacked -->
+              <div class="p-5 space-y-3">
+
+                <!-- Listing card 1: SpaceX -->
+                <div class="rounded-lg border border-white/[.06] bg-white/[.02] p-4">
+                  <div class="flex items-start justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <img src="logos/spacex.svg" alt="SpaceX" class="h-9 w-9 rounded-lg" />
+                      <div>
+                        <div class="text-sm font-semibold text-white">SpaceX</div>
+                        <div class="text-[11px] text-slate-500">Common &middot; 100–500 shares</div>
+                      </div>
+                    </div>
+                    <span class="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 text-[10px] font-semibold text-emerald-400">
+                      <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                      Verified
+                    </span>
+                  </div>
+                  <div class="flex items-baseline justify-between">
+                    <div>
+                      <span class="text-lg font-bold text-white">$95 – $110</span>
+                      <span class="text-[11px] text-slate-600 ml-1">/ share</span>
+                    </div>
+                    <div class="text-right">
+                      <div class="text-[11px] text-slate-500">Implied $250B</div>
+                    </div>
+                  </div>
+                  <div class="mt-2.5 flex gap-1.5">
+                    <span class="rounded bg-white/5 px-1.5 py-0.5 text-[9px] font-medium text-slate-500 uppercase tracking-wider">ROFR Waived</span>
+                    <span class="rounded bg-white/5 px-1.5 py-0.5 text-[9px] font-medium text-slate-500 uppercase tracking-wider">Lockup Expired</span>
+                    <span class="rounded bg-white/5 px-1.5 py-0.5 text-[9px] font-medium text-slate-500 uppercase tracking-wider">Rule 144</span>
+                  </div>
+                </div>
+
+                <!-- Listing card 2: Stripe -->
+                <div class="rounded-lg border border-white/[.06] bg-white/[.02] p-4">
+                  <div class="flex items-start justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <img src="logos/stripe.svg" alt="Stripe" class="h-9 w-9 rounded-lg" />
+                      <div>
+                        <div class="text-sm font-semibold text-white">Stripe</div>
+                        <div class="text-[11px] text-slate-500">Preferred &middot; 50–200 shares</div>
+                      </div>
+                    </div>
+                    <span class="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 text-[10px] font-semibold text-emerald-400">
+                      <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                      Verified
+                    </span>
+                  </div>
+                  <div class="flex items-baseline justify-between">
+                    <div>
+                      <span class="text-lg font-bold text-white">$28 – $35</span>
+                      <span class="text-[11px] text-slate-600 ml-1">/ share</span>
+                    </div>
+                    <div class="text-right">
+                      <div class="text-[11px] text-slate-500">Implied $65B</div>
+                    </div>
+                  </div>
+                  <div class="mt-2.5 flex gap-1.5">
+                    <span class="rounded bg-white/5 px-1.5 py-0.5 text-[9px] font-medium text-slate-500 uppercase tracking-wider">ROFR Waived</span>
+                    <span class="rounded bg-white/5 px-1.5 py-0.5 text-[9px] font-medium text-slate-500 uppercase tracking-wider">Transfer Agent</span>
+                  </div>
+                </div>
+
+                <!-- Listing card 3: partial/cut off — implies there's more -->
+                <div class="rounded-lg border border-white/[.06] bg-white/[.02] p-4 opacity-40">
+                  <div class="flex items-start justify-between">
+                    <div class="flex items-center gap-3">
+                      <img src="logos/anduril.svg" alt="Anduril" class="h-9 w-9 rounded-lg" />
+                      <div>
+                        <div class="text-sm font-semibold text-white">Anduril</div>
+                        <div class="text-[11px] text-slate-500">Preferred &middot; 75–300 shares</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VERIFICATION MECHANICS — show, don't tell ===== -->
+    <section class="border-b border-white/5">
+      <div class="mx-auto max-w-7xl px-6 py-20 lg:py-24">
+
+        <!-- Section header: left-aligned, editorial -->
+        <div class="max-w-lg mb-14">
+          <p class="text-[13px] font-mono font-medium text-indigo-400/80 mb-3 tracking-wide">HOW TRUST WORKS HERE</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white leading-snug">
+            Both sides of the table prove what they claim before anyone talks.
+          </h2>
+        </div>
+
+        <!-- Two-column: Sellers / Buyers — showing the actual mechanism, not a vague feature blurb -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+          <!-- Seller side -->
+          <div class="rounded-xl border border-white/[.06] bg-white/[.015] p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="h-8 w-8 rounded-md bg-emerald-500/10 flex items-center justify-center">
+                <svg class="h-4 w-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12"/></svg>
+              </div>
+              <h3 class="text-base font-semibold text-white">Sellers prove shares</h3>
+            </div>
+
+            <div class="space-y-4">
+              <!-- Method rows — concrete, not vague -->
+              <div class="flex items-start gap-3">
+                <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-white/5 text-[10px] font-bold text-slate-500 font-mono">1</div>
+                <div>
+                  <div class="text-sm font-medium text-white/80">Document hash</div>
+                  <div class="text-[13px] text-slate-500">Upload stock certificate or cap table entry. SHA-256 hash goes on-chain. Document stays with you.</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-white/5 text-[10px] font-bold text-slate-500 font-mono">2</div>
+                <div>
+                  <div class="text-sm font-medium text-white/80">Transfer agent verification</div>
+                  <div class="text-[13px] text-slate-500">Third-party agent confirms you hold what you claim. Verifier address recorded on-chain.</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-white/5 text-[10px] font-bold text-slate-500 font-mono">3</div>
+                <div>
+                  <div class="text-sm font-medium text-white/80">Escrow attestation</div>
+                  <div class="text-[13px] text-slate-500">Shares held in escrow. Escrow agent signs attestation recorded to the ListingRegistry contract.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Buyer side -->
+          <div class="rounded-xl border border-white/[.06] bg-white/[.015] p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="h-8 w-8 rounded-md bg-amber-500/10 flex items-center justify-center">
+                <svg class="h-4 w-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375"/></svg>
+              </div>
+              <h3 class="text-base font-semibold text-white">Buyers prove funds</h3>
+            </div>
+
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-white/5 text-[10px] font-bold text-slate-500 font-mono">1</div>
+                <div>
+                  <div class="text-sm font-medium text-white/80">Stablecoin wallet</div>
+                  <div class="text-[13px] text-slate-500">USDC/USDT/PYUSD balance checked on-chain. Tiered: &lt;$25K, $25K–$250K, $250K–$1M, $1M+.</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-white/5 text-[10px] font-bold text-slate-500 font-mono">2</div>
+                <div>
+                  <div class="text-sm font-medium text-white/80">Bank verification</div>
+                  <div class="text-[13px] text-slate-500">Plaid-verified bank balance. Account read-only — no transactions. Proof expires after 30 days.</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-white/5 text-[10px] font-bold text-slate-500 font-mono">3</div>
+                <div>
+                  <div class="text-sm font-medium text-white/80">Letter of credit</div>
+                  <div class="text-[13px] text-slate-500">Upload institution LOC. Document hashed, stored on IPFS, hash recorded to chain. 30-day expiry.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Credential flow — a horizontal pipeline instead of numbered steps -->
+        <div class="mt-12 rounded-xl border border-white/[.06] bg-white/[.015] px-8 py-6">
+          <div class="flex items-center gap-2 mb-5">
+            <svg class="h-4 w-4 text-indigo-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+            <span class="text-[13px] font-medium text-white/60">Onboarding credential flow</span>
+          </div>
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-0">
+            <!-- Step -->
+            <div class="flex items-center gap-2.5">
+              <div class="h-7 w-7 rounded-md bg-indigo-500/15 flex items-center justify-center">
+                <svg class="h-3.5 w-3.5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3"/></svg>
+              </div>
+              <span class="text-sm text-white/70 font-medium">Connect wallet</span>
+            </div>
+            <!-- Arrow -->
+            <svg class="hidden sm:block h-3.5 w-8 text-white/10 shrink-0" fill="none" viewBox="0 0 32 14"><path d="M0 7h28m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <!-- Step -->
+            <div class="flex items-center gap-2.5">
+              <div class="h-7 w-7 rounded-md bg-indigo-500/15 flex items-center justify-center">
+                <svg class="h-3.5 w-3.5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
+              </div>
+              <span class="text-sm text-white/70 font-medium">Persona KYC</span>
+            </div>
+            <svg class="hidden sm:block h-3.5 w-8 text-white/10 shrink-0" fill="none" viewBox="0 0 32 14"><path d="M0 7h28m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <!-- Step -->
+            <div class="flex items-center gap-2.5">
+              <div class="h-7 w-7 rounded-md bg-indigo-500/15 flex items-center justify-center">
+                <svg class="h-3.5 w-3.5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <span class="text-sm text-white/70 font-medium">Attest accredited status</span>
+            </div>
+            <svg class="hidden sm:block h-3.5 w-8 text-white/10 shrink-0" fill="none" viewBox="0 0 32 14"><path d="M0 7h28m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <!-- Step -->
+            <div class="flex items-center gap-2.5">
+              <div class="h-7 w-7 rounded-md bg-emerald-500/15 flex items-center justify-center">
+                <svg class="h-3.5 w-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+              </div>
+              <span class="text-sm text-emerald-400 font-medium">On-chain credential issued</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== WHAT THIS IS / WHAT THIS ISN'T — editorial, opinionated ===== -->
+    <section class="border-b border-white/5">
+      <div class="mx-auto max-w-7xl px-6 py-20 lg:py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+          <!-- What this is -->
+          <div>
+            <h3 class="text-lg font-bold text-white mb-6">What this is</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <svg class="h-4 w-4 mt-0.5 text-emerald-500/70 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                <p class="text-[14px] text-slate-400 leading-relaxed">A <span class="text-white font-medium">bulletin board</span> where verified holders list pre-IPO positions they want to sell</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="h-4 w-4 mt-0.5 text-emerald-500/70 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                <p class="text-[14px] text-slate-400 leading-relaxed"><span class="text-white font-medium">Cryptographic proof</span> that a seller owns shares and a buyer has capital — before anyone enters a deal room</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="h-4 w-4 mt-0.5 text-emerald-500/70 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                <p class="text-[14px] text-slate-400 leading-relaxed"><span class="text-white font-medium">Private deal rooms</span> for document exchange and signing a deal memo between two parties</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="h-4 w-4 mt-0.5 text-emerald-500/70 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                <p class="text-[14px] text-slate-400 leading-relaxed"><span class="text-white font-medium">On-chain attestation only</span> — identity hashes, listing metadata, deal memos. No assets held.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- What this isn't -->
+          <div>
+            <h3 class="text-lg font-bold text-white mb-6">What this is not</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <svg class="h-4 w-4 mt-0.5 text-red-500/60 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                <p class="text-[14px] text-slate-500 leading-relaxed">Not a broker-dealer. We don't execute, arrange, or facilitate transactions.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="h-4 w-4 mt-0.5 text-red-500/60 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                <p class="text-[14px] text-slate-500 leading-relaxed">Not an ATS or exchange. No order book, no matching engine, no settlement.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="h-4 w-4 mt-0.5 text-red-500/60 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                <p class="text-[14px] text-slate-500 leading-relaxed">Not custodial. No assets, funds, or securities are held by the platform at any time.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="h-4 w-4 mt-0.5 text-red-500/60 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                <p class="text-[14px] text-slate-500 leading-relaxed">Not investment advice. Consult your own legal and financial counsel before any transaction.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA strip ===== -->
+    <section class="border-b border-white/5 bg-slate-900/40">
+      <div class="mx-auto max-w-7xl px-6 py-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div>
+          <h2 class="text-xl font-bold text-white mb-1">Verified and ready to browse?</h2>
+          <p class="text-sm text-slate-500">6 active listings from verified sellers. All compliance flags visible.</p>
+        </div>
+        <a href="listings.html" class="group inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500 transition-colors shrink-0">
+          View Listings
+          <svg class="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-slate-950">
+    <div class="mx-auto max-w-7xl px-6 py-10">
+      <div class="rounded-lg border border-amber-500/10 bg-amber-950/20 px-5 py-4 mb-5">
+        <p class="text-[10px] font-semibold text-amber-500/50 uppercase tracking-widest mb-1">Important Notice</p>
+        <p class="text-[11px] text-amber-500/40 leading-relaxed">This is not a general solicitation or advertisement. Access is restricted to pre-qualified accredited investors only.</p>
+      </div>
+      <div class="rounded-lg border border-white/[.04] bg-white/[.01] px-5 py-4 mb-8">
+        <p class="text-[11px] text-slate-600 leading-relaxed">This platform is a bulletin board service only. It does not execute, clear, or settle securities transactions, and does not constitute a broker-dealer, investment adviser, or alternative trading system. All transactions are conducted directly between parties. Securities offered may not be registered under the Securities Act of 1933. This platform is available only to accredited investors as defined under Rule 501 of Regulation D. Past performance is not indicative of future results. Consult qualified legal and financial counsel before transacting.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-700">
+        <div class="flex items-center gap-2">
+          <div class="flex h-5 w-5 items-center justify-center rounded bg-indigo-600/30">
+            <svg class="h-3 w-3 text-indigo-400/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          </div>
+          <span>PreIPO</span>
+        </div>
+        <div class="flex items-center gap-5">
+          <span>Ink Chain (Kraken L2)</span>
+          <span>&copy; 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
