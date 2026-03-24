@@ -133,6 +133,46 @@ export interface ListingFilters {
   sortBy?: 'newest' | 'oldest' | 'price_asc' | 'price_desc' | 'valuation';
 }
 
+export type InterestRequestStatus = 'PENDING' | 'APPROVED' | 'DECLINED' | 'WITHDRAWN';
+
+export type AccessTier = 'PUBLIC' | 'VERIFIED_ONLY' | 'APPROVED_ONLY';
+
+export interface BuyerCredentials {
+  kycStatus: KycStatus;
+  accreditedInvestorAttestation: boolean;
+  pofTier?: PofTier;
+  pofMethod?: PofMethod;
+  pofVerifiedAt?: Date;
+  didTokenId?: string;
+  walletAddress: string;
+}
+
+export interface InterestRequest {
+  id: string;
+  listingId: string;
+  buyerId: string;
+  buyerWallet: string;
+  buyerCredentials: BuyerCredentials;
+  message: string;
+  intendedQuantityMin?: number;
+  intendedQuantityMax?: number;
+  status: InterestRequestStatus;
+  sellerNote?: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface ListingPrivateInfo {
+  listingId: string;
+  sideLetterHash?: string;
+  sideLetterName?: string;
+  certificateDocHash?: string;
+  certificateDocName?: string;
+  transferAgentContact?: string;
+  escrowAgentContact?: string;
+  sellerNotes?: string;
+}
+
 export interface OnboardingState {
   step: 'wallet' | 'email' | 'kyc' | 'accreditation' | 'credential' | 'complete';
   walletConnected: boolean;

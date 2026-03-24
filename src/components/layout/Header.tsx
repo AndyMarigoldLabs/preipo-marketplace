@@ -18,6 +18,9 @@ export function Header() {
 
   const navItems = [
     { href: '/listings', label: 'Listings' },
+    ...(isAuthenticated
+      ? [{ href: '/dashboard', label: 'Dashboard' }]
+      : []),
     ...(isAuthenticated && user?.kycStatus === 'VERIFIED'
       ? [{ href: '/listings/create', label: 'Create' }]
       : []),
